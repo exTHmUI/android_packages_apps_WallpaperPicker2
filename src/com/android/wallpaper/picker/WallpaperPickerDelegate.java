@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.provider.MediaStore;
 import android.service.wallpaper.WallpaperService;
 
 import androidx.annotation.NonNull;
@@ -161,7 +162,7 @@ public class WallpaperPickerDelegate implements MyPhotosStarter {
     }
 
     private void showCustomPhotoPicker() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
+        Intent intent = new Intent(MediaStore.ACTION_PICK_IMAGES);
         intent.setType("image/*");
         mActivity.startActivityForResult(intent, SHOW_CATEGORY_REQUEST_CODE);
     }
